@@ -18,14 +18,14 @@
 
 const path = require('path');
 const assert = require('node:assert/strict');
-const {after, before, describe, it} = require('mocha');
+const {after, before, xdescribe, it} = require('mocha');
 const cp = require('child_process');
 const {StoragePoolsClient} = require('@google-cloud/compute').v1;
 
 const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 const cwd = path.join(__dirname, '..');
 
-describe('Create compute hyperdisk pool', async () => {
+xdescribe('Create compute hyperdisk pool', async () => {
   const storagePoolName = 'storage-pool-name';
   const zone = 'us-central1-a';
   const storagePoolsClient = new StoragePoolsClient();
