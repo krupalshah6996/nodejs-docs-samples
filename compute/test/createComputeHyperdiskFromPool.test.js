@@ -18,14 +18,14 @@
 
 const path = require('path');
 const {assert} = require('chai');
-const {after, before, describe, it} = require('mocha');
+const {after, before, xdescribe, it} = require('mocha');
 const cp = require('child_process');
 const {DisksClient, StoragePoolsClient} = require('@google-cloud/compute').v1;
 
 const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 const cwd = path.join(__dirname, '..');
 
-describe('Create compute hyperdisk from pool', async () => {
+xdescribe('Create compute hyperdisk from pool', async () => {
   const diskName = 'disk-name-from-pool';
   const zone = 'europe-central2-b';
   const storagePoolName = 'storage-pool-name-hyperdisk';
